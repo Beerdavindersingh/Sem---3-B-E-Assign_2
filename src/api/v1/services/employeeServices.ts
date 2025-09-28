@@ -72,3 +72,17 @@ export const updateEmployee = async (
  
  
 };
+
+/**
+* delete the employee from the list
+* @param id this will finf the id from list
+* @throws error if it didnt find the employee id
+*/ 
+export const deleteEmployee = async (id: number): Promise<void> => {
+    const index: number = employee.findIndex((emp: Employees) => emp.id === id);
+    if (index === -1) {
+        throw new Error(`Employee with ID ${id} not found`)
+    }
+ 
+    employee.splice(index,1);
+};
