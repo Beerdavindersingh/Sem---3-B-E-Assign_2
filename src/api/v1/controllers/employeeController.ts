@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { HTTP_STATUS } from "../../../constants/httpConstants";
 import * as employeeService from "../services/employeeServices";
-import { Employees } from "../../../models/employeeModel";
+import { Employees } from "../models/employeeModel";
  
  
 /**

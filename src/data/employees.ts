@@ -1,4 +1,4 @@
-import { Employees } from "../models/employeeModel";
+import { Employees } from "../api/v1/models/employeeModel";
  
 // array containing the employee data
  

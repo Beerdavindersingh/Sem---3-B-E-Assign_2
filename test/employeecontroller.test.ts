@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { HTTP_STATUS } from "../src/constants/httpConstants";
 import * as employeeController from "../src/api/v1/controllers/employeeController";
 import * as employeeService from "../src/api/v1/services/employeeServices";
-import { Employees } from "../src/models/employeeModel";
+import { Employees } from "../src/api/v1/models/employeeModel";
  
  
 jest.mock("../src/api/v1/services/employeeServices");
@@ -47,7 +47,7 @@ describe("employee Controller", () => {
  
             expect(mockRes.status).toHaveBeenCalledWith(HTTP_STATUS.OK);
             expect(mockRes.json).toHaveBeenCalledWith({
-                message: "Employees retrieved sucessfully",
+                message: "employees information retrieved sucessfully",
                 data: mockEmployees,
             });
         });
@@ -81,7 +81,7 @@ describe("employee Controller", () => {
  
             expect(mockRes.status).toHaveBeenCalledWith(HTTP_STATUS.CREATED);
             expect(mockRes.json).toHaveBeenCalledWith({
-                message: "Employee created successfully",
+                message: "Employee created successfully.",
                 data: mockEmployees,
             });
         });
@@ -102,7 +102,7 @@ describe("employee Controller", () => {
             );
             expect(mockRes.status).toHaveBeenCalledWith(HTTP_STATUS.BAD_REQUEST);
             expect(mockRes.json).toHaveBeenCalledWith({
-                message: "Employee name is required",
+                message: "Employee name is required.",
             });
         });
     });
@@ -136,7 +136,7 @@ describe("employee Controller", () => {
  
             expect(mockRes.status).toHaveBeenCalledWith(HTTP_STATUS.OK);
             expect(mockRes.json).toHaveBeenCalledWith({
-                message: "Employee updated successfully",
+                message: "Employee data updated successfully",
                 data: mockEmployees,
             });
         });
@@ -158,7 +158,7 @@ describe("employee Controller", () => {
             );
             expect(mockRes.status).toHaveBeenCalledWith(HTTP_STATUS.BAD_REQUEST);
             expect(mockRes.json).toHaveBeenCalledWith({
-                message: "Employee name is required",
+                message: "Employee name is required.",
             });
         });
     });
@@ -175,7 +175,7 @@ describe("employee Controller", () => {
                 );
                 expect(mockRes.status).toHaveBeenCalledWith(HTTP_STATUS.OK);
                 expect(mockRes.json).toHaveBeenCalledWith({
-                message: "employee deleted successfully",
+                message: "Employee data deleted successfully.",
             });
         });
     });
